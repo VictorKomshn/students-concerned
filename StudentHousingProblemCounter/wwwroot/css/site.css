@@ -8,8 +8,8 @@ body {
     height: 100%;
 }
 
-footer{
-    height:10rem;
+footer {
+    height: 10rem;
 }
 
 .main-info-wrapper {
@@ -18,8 +18,8 @@ footer{
     margin-top: 20rem;
 }
 
-.counter-container{
-    display:flex;
+.counter-container {
+    display: flex;
 }
 
 #live-counter {
@@ -37,8 +37,8 @@ footer{
     flex-direction: column;
 }
 
-.label-wrapper{
-   display:flex;
+.label-wrapper {
+    display: flex;
 }
 
 .label-info {
@@ -63,30 +63,47 @@ footer{
     gap: 5rem;
 }
 
-.script-wrapper{
-    display:flex;
-    flex-direction:column;
+.script-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .subscribe-wrapper {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
 }
 
-.subscribe-button-wrapper{
-    margin:0 auto;
-    display:flex;
+.subscribe-button-wrapper {
+    margin: 0 auto;
+    display: flex;
+    border: 3px solid #000;
+    border-radius:34px;
+    height:30%;
 }
 
-.logo-wrapper{
-    display:flex;
+.logo-wrapper {
+    display: flex;
 }
 
-.logo-wrapper img{
-    margin:0 auto;
-    margin-top:3rem;    
+    .logo-wrapper img {
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+
+input[type=button] {
+    border:unset;
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    background:#000;
+    color:#fff;
+}
+
+input[type=text] {
+    border: unset;
+    border-top-left-radius: 34px;
+    border-bottom-left-radius: 34px;
 }
 
 @keyframes move {
@@ -99,9 +116,9 @@ footer{
     }
 }
 
-@media(max-width: 768px){
-    .main-script-wrapper{
-        font-size:17px;
-        max-width:90%;
+@media(max-width: 768px) {
+    .main-script-wrapper {
+        font-size: 17px;
+        max-width: 90%;
     }
 }
