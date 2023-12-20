@@ -6,8 +6,19 @@ let currNum = 0;
 let ticks;
 const time = 1000;
 
-document.onload = function () {
-    getData();
+window.onload = function () {
+    return jQuery.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        'type': 'POST',
+        'url': "/livedata",
+        'dataType': 'json',
+        'success': function (res) {
+            update(res, false);
+        }
+    })
 }
 
 function getData() {
@@ -20,12 +31,12 @@ function getData() {
         'url': "/livedata",
         'dataType': 'json',
         'success': function (res) {
-            update(res);
+            update(res,true);
         }
     })
 }
 
-function update(num) {
+function update(num,executeAnimation) {
     const toDigits = num.toString().split('').reverse();
     const fromDigits = currNum.toString().split('').reverse();
 
@@ -35,7 +46,12 @@ function update(num) {
 
     for (let i = toDigits.length; i >= 0; i--) {
         if (toDigits[i] != fromDigits[i]) {
-            animate((counterDigits.length - 1) - i, toDigits[i]);
+            if (executeAnimation == true) {
+                animate((counterDigits.length - 1) - i, toDigits[i]);
+            }
+            else {
+                counterDigits[(counterDigits.length - 1) - i].innerText = toDigits[i];
+            }
         }
     }
     currNum = num;
