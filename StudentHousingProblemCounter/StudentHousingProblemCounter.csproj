@@ -10,4 +10,8 @@
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NReco.Logging.File" Version="1.1.7" />
+  </ItemGroup>
+
 </Project>

@@ -2,6 +2,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddCors();
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddFile("app.log", append: true);
+});
 
 var app = builder.Build();
 
