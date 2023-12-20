@@ -76,7 +76,7 @@ footer {
 }
 
 .subscribe-button-wrapper {
-    margin: 0 auto;
+    margin: 15px auto;
     display: flex;
     border: 3px solid #000;
     border-radius:34px;
